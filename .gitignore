@@ -1,0 +1,12 @@
+# Versions
+Versions
+
+# Other HTML Files
+*.html
+!index.html
+
+# Rar files
+*.rar
+
+# Markdown files
+*.md
