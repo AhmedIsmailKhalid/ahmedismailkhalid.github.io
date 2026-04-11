@@ -732,7 +732,7 @@
       <div class="card-divider"></div>
       <div class="availability-row">
         <span class="avail-label">Location</span>
-        <span style="font-size:0.82rem;font-weight:500;color:var(--text)">Ohio · Remote OK</span>
+        <span style="font-size:0.82rem;font-weight:500;color:var(--text)">USA · Remote OK</span>
       </div>
       <div class="tech-chips">
         <span class="chip">Python</span>
@@ -868,7 +868,7 @@
           <span class="skill-group-name">Software Engineering</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Node.js</span><span class="skill-tag">REST APIs</span><span class="skill-tag">WebSockets</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Prisma</span><span class="skill-tag">JWT Auth</span>
+          <span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Node.js</span><span class="skill-tag">REST APIs</span><span class="skill-tag">WebSockets</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Prisma</span><span class="skill-tag">JWT Auth</span><span class="skill-tag">Tailwind CSS</span><span class="skill-tag">NextAuth</span><span class="skill-tag">Zod</span><span class="skill-tag">Cloudinary</span>
         </div>
       </div>
     </div>
@@ -987,7 +987,7 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/AhmedIsmailKhalid/Real-Time-Multi-Object-Tracking-Re-Identification-System" target="_blank" class="plink">🐙 GitHub</a>
-          <span class="plink-private">🎬 Demo Coming Soon</span>
+          <a href="https://www.youtube.com/watch?v=YWRIBzfaUS4" target="_blank" rel="noopener" class="plink">🎬 Demo Video</a>
         </div>
       </div>
 
@@ -1028,7 +1028,7 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/AhmedIsmailKhalid/Edge-AI-AutoML-Platform-Automated-Model-Optimization-and-Deployment" target="_blank" class="plink">🐙 GitHub</a>
-          <span class="plink-private">🎬 Demo Coming Soon</span>
+          <a href="https://www.youtube.com/watch?v=7HpYJYHAo8E" target="_blank" rel="noopener" class="plink">🎬 Demo Video</a>
         </div>
       </div>
 
@@ -1092,6 +1092,26 @@
           <a href="https://github.com/AhmedIsmailKhalid/Stackly-Real-Time-Notification-System" target="_blank" class="plink">🐙 GitHub</a>
           <a href="https://stackly-real-time-notification-syst.vercel.app" target="_blank" class="plink">🌐 Live Site</a>
           <a href="https://stackly-backend-334263295854.us-central1.run.app" target="_blank" class="plink">⚙️ Backend API</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-type="fullstack" data-project="knotly" onclick="openProjectModal('knotly')" style="cursor:pointer;">
+        <span class="project-type-tag tag-frontend">Full Stack</span>
+        <h3>Knotly — Wedding Vendor Directory</h3>
+        <p>Full-stack wedding vendor marketplace built with Next.js 14 App Router and Prisma. Features two authenticated portals (couple and vendor), an admin approval system, a multi-turn inquiry conversation system, Cloudinary image uploads, and a searchable vendor directory across 7 categories.</p>
+        <div class="project-metrics">
+          <div class="metric"><div class="metric-val">3</div><div class="metric-key">User Roles</div></div>
+          <div class="metric"><div class="metric-val">7</div><div class="metric-key">Vendor Categories</div></div>
+          <div class="metric"><div class="metric-val">RSC</div><div class="metric-key">Server Components</div></div>
+        </div>
+        <div class="project-footer">
+          <div class="project-stack">
+            <span class="stack-tag">Next.js 14</span><span class="stack-tag">TypeScript</span><span class="stack-tag">Prisma</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">NextAuth</span><span class="stack-tag">Cloudinary</span><span class="stack-tag">Tailwind</span><span class="stack-tag">Zod</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/AhmedIsmailKhalid/Knotly-Wedding-Vendor-Directory" target="_blank" class="plink">🐙 GitHub</a>
+          <a href="https://knotly-wedding-vendor-directory-blue.vercel.app" target="_blank" class="plink">🌐 Live Site</a>
         </div>
       </div>
 
@@ -1531,6 +1551,33 @@
         { label: '🐙 GitHub', href: 'https://github.com/AhmedIsmailKhalid/Stackly-Real-Time-Notification-System' },
         { label: '🌐 Live Site', href: 'https://stackly-real-time-notification-syst.vercel.app' },
         { label: '⚙️ Backend API', href: 'https://stackly-backend-334263295854.us-central1.run.app' },
+      ]
+    },
+
+    knotly: {
+      title: 'Knotly — Wedding Vendor Directory',
+      tag: 'Full Stack',
+      tagClass: 'tag-wedding',
+      problem: `Wedding planning is fragmented. Couples spend hours across dozens of websites researching vendors with no central place to browse, compare, save, and reach out to multiple vendor types at once. Vendors lack an affordable platform to showcase their work and receive qualified inquiries directly from engaged couples.`,
+      solution: `Built a full-stack wedding vendor marketplace using Next.js 14 App Router with React Server Components — all data-fetching pages render server-side with zero client-side loading spinners on first paint. The platform features two authenticated portals (couple and vendor) and an admin approval workflow. Vendor photos upload directly from the browser to Cloudinary, bypassing the server entirely. The inquiry system supports multi-turn threaded conversations with a senderRole field distinguishing vendor replies from couple follow-ups. Route protection is enforced at three independent layers: Proxy Middleware (edge), Server Component session check, and API route ownership validation.`,
+      highlights: [
+        'Next.js 14 App Router with React Server Components — zero client-side loading on first paint',
+        'Three-layer auth: Proxy Middleware + Server Component check + API ownership validation',
+        'Direct Cloudinary upload pipeline — images bypass the server, only metadata stored in PostgreSQL',
+        'Multi-turn inquiry conversation system with senderRole field for threaded vendor/couple dialogue',
+        'Admin approval workflow — listings hidden until approved, with full vendor review panel',
+        'Full-text vendor search with category, location, and price range filters',
+        '3 user roles (Couple, Vendor, Admin), 7 vendor categories, live demo accounts on login page',
+      ],
+      archDiagrams: [
+        { label: 'System Architecture', src: 'assets/knotly-arch.png' },
+        { label: 'Database Schema', src: 'assets/knotly-schema.png' },
+      ],
+      youtubeId: null,
+      readmeUrl: 'https://github.com/AhmedIsmailKhalid/Knotly-Wedding-Vendor-Directory#readme',
+      links: [
+        { label: '🐙 GitHub', href: 'https://github.com/AhmedIsmailKhalid/Knotly-Wedding-Vendor-Directory' },
+        { label: '🌐 Live Site', href: 'https://knotly-wedding-vendor-directory-blue.vercel.app' },
       ]
     },
 
