@@ -10,3 +10,7 @@ Versions
 
 # Markdown files
 *.md
+
+# Resume
+*.pdf
+*.docx
