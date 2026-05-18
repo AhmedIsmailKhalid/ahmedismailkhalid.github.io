@@ -1157,6 +1157,26 @@
         </div>
       </div>
 
+      <div class="project-card" data-type="fullstack" data-project="modulus" onclick="openProjectModal('modulus')" style="cursor:pointer;">
+        <span class="project-type-tag tag-frontend">Full Stack</span>
+        <h3>Modulus — Micro-Frontend Retail Operations Platform</h3>
+        <p>A micro-frontend retail operations platform decomposed into four independently deployable React applications — Shell, Inventory, Orders, and Analytics — composed at runtime via Webpack 5 Module Federation. Each MFE ships on its own CI/CD pipeline with no coordinated releases required.</p>
+        <div class="project-metrics">
+          <div class="metric"><div class="metric-val">4</div><div class="metric-key">Independent MFEs</div></div>
+          <div class="metric"><div class="metric-val">14</div><div class="metric-key">E2E Test Steps</div></div>
+          <div class="metric"><div class="metric-val">3</div><div class="metric-key">RBAC Roles</div></div>
+        </div>
+        <div class="project-footer">
+          <div class="project-stack">
+            <span class="stack-tag">React 18</span><span class="stack-tag">Webpack 5</span><span class="stack-tag">Module Federation</span><span class="stack-tag">TypeScript</span><span class="stack-tag">Turborepo</span><span class="stack-tag">Tailwind</span><span class="stack-tag">Vitest</span><span class="stack-tag">Playwright</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/AhmedIsmailKhalid/Modulus-MicroFrontEnd-Retail-Operations-Platform" target="_blank" class="plink">🐙 GitHub</a>
+          <a href="https://modulus-retail-operations-platform.vercel.app" target="_blank" class="plink">🌐 Live Site</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1780,6 +1800,34 @@
       links: [
         { label: '🐙 GitHub', href: 'https://github.com/AhmedIsmailKhalid/Reforge-Conduit-Rebuild-Performance-Case-Study' },
         { label: '🌐 Live Site', href: 'https://reforge-conduit-rebuild-performan.vercel.app' },
+      ]
+    },
+
+    modulus: {
+      title: 'Modulus — Micro-Frontend Retail Operations Platform',
+      tag: 'Full Stack',
+      tagClass: 'tag-frontend',
+      problem: `Enterprise retail back-office platforms are typically deployed as monoliths, meaning a change to the inventory UI requires redeploying the entire application — including the orders and analytics surfaces owned by separate teams. Coordinated release cycles create deployment bottlenecks, and a failure in one domain can block unrelated teams from shipping. The goal was to demonstrate a micro-frontend architecture where each operational domain is independently deployable, independently testable, and independently owned.`,
+      solution: `Decomposed the platform into four React 18 applications — Shell, Inventory, Orders, and Analytics — composed at runtime via Webpack 5 Module Federation. The shell acts as the host, dynamically loading each remote's bundle at the declared URL without any build-time coupling. A singleton auth context is shared from the shell into all remotes, providing a consistent session state across MFEs without duplication. Each application lives in a Turborepo monorepo with its own GitHub Actions pipeline running lint, typecheck, Vitest unit tests, build, and Vercel deployment in sequence. The shell pipeline adds a Playwright E2E stage post-deploy, publishing an HTML report to GitHub Pages at a run-scoped URL and firing a Slack alert on test failure. Role-based access control restricts navigation at the shell level — the sidebar only surfaces sections the authenticated role can access, and unauthorised direct navigation renders an Access Denied page.`,
+      highlights: [
+        'Webpack 5 Module Federation: each MFE is a standalone deployable app loaded dynamically by the shell at runtime — no build-time coupling between host and remotes',
+        'Four independent CI/CD pipelines (Turborepo + GitHub Actions): each triggers only on changes to its own apps/<name>/** path, enabling zero-coordination deploys',
+        'Singleton auth context propagated from shell into all remotes: session state is consistent across MFE boundaries without duplicated auth logic',
+        'Role-based access control across three roles (ops_manager, inventory_staff, fulfilment_staff): sidebar navigation and page-level guards enforce domain boundaries',
+        'Playwright E2E suite: 14-step cross-MFE workflow covering login, inventory CRUD, order status transitions, and analytics chart rendering',
+        'E2E reports published to GitHub Pages at a unique run-scoped URL with Slack alert on failure',
+        'Error boundary isolation: a remote failure renders an error state in that MFE slot without affecting the shell or other remotes',
+        'All four applications deployed to Vercel with independent project IDs — shell redeploy is not required when a remote ships a new build',
+      ],
+      archDiagrams: [
+        { label: 'Architecture Diagram', src: 'assets/modulus-arch.png' },
+      ],
+      benchmarkReport: null,
+      youtubeId: null,
+      readmeUrl: 'https://github.com/AhmedIsmailKhalid/Modulus-MicroFrontEnd-Retail-Operations-Platform#readme',
+      links: [
+        { label: '🐙 GitHub', href: 'https://github.com/AhmedIsmailKhalid/Modulus-MicroFrontEnd-Retail-Operations-Platform' },
+        { label: '🌐 Live Site', href: 'https://modulus-retail-operations-platform.vercel.app' },
       ]
     },
 
